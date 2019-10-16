@@ -56,6 +56,7 @@
                                     $post_Date = $row['post_date'];
                                     $post_Content = $row['post_content'];
                                     $post_Tags = $row['post_tags'];
+                                    $post_Image = $row['post_image'];
                                     
                                     // End php script to include html::after
                                     ?>
@@ -63,7 +64,7 @@
                                     <!-- Blog Post -->
                                     <div class="card mb-4">  
 
-                                        <img class="card-img-top" src="http://placehold.it/750x300" alt="Post Related Image">
+                                        <img class="card-img-top" src="images/posts/<?php echo $post_Image; ?>" alt="Post Related Image">
                                         <div class="card-body"> 
                                             
                                             <h2 class="card-title"><?php echo $post_Title; ?></h2>
