@@ -163,24 +163,7 @@
                         
                 
 
-                    ?>
-
-<!-- Replacing nav-items with PHP -->
-
-<!--<a class="nav-item nav-link active font-weight-bold disabled text-light" href="#">Latest</a>
-    <span class="vertical_Line"></span>
-    <span > <hr class="m-auto border-dark"></span>
-
-<a class="nav-item nav-link nav_My_Color text-light" href="#">Tech</a>
-    <span class="vertical_Line"></span>
-    <span > <hr class="m-auto border-dark"></span>
-
-<a class="nav-item nav-link nav_My_Color text-light" href="#">Coding</a>
-    <span class="vertical_Line"></span>
-    <span > <hr class="m-auto border-dark"></span>
-
-<a class="nav-item nav-link text-light" href="#">Life Advice</a>
-<span > <hr class="m-auto border-dark"></span>-->
+                    ?> <!-- /. nav categories -->
 
                     </div> <!-- -->
 
@@ -192,8 +175,8 @@
 
                         <form class="form-inline my-2 my-lg-0">
 
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                            <input class="form-control mr-sm-2" type="search" name="nav_Search_Query" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-light my-2 my-sm-0" type="submit" name="nav_Search">Search</button>
 
                         </form> <!-- END OF: search form -->
 

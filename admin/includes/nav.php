@@ -46,11 +46,11 @@
 
                                 </form> <!-- END OF: search form -->
 
-                                <button type="button" class="btn text-light mx-2"><img src="images/chat-alt-solid-white.png" alt="Defaut Profile Icon" style="width: 16px; height: 16px;"></button> <!-- / -->
+                                <button type="button" class="btn text-light mx-2"><img src="images/icons/chat-alt-solid-light.png" alt="Defaut Profile Icon" style="width: 16px; height: 16px;"></button> <!-- / -->
 
-                                <button type="button" class="btn text-light mx-2"><img src="images/notification-solid-white.png" alt="Defaut Profile Icon" style="width: 16px; height: 16px;"></button> <!-- / -->
+                                <button type="button" class="btn text-light mx-2"><img src="images/icons/notification-solid-light.png" alt="Defaut Profile Icon" style="width: 16px; height: 16px;"></button> <!-- / -->
 
-                                <button type="button" class="btn text-light dropdown-toggle mx-2" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20"><img src="/images/person-solid-white.png" alt="Defaut Profile Icon" style="width: 16px; height: 16px;"></button> <!-- /Account -->
+                                <button type="button" class="btn text-light dropdown-toggle mx-2" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20"><img src="../images/person-solid-white.png" alt="Defaut Profile Icon" style="width: 16px; height: 16px;"></button> <!-- /Account -->
 
                                 <form class="dropdown-menu dropdown-menu-right mr-1 p-4 px-4 py-3 p-4 mt-2 mr-2" method="post">
 

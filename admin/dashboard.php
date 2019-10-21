@@ -22,7 +22,7 @@
         
         <div class="row">
             
-            <div class="col-6 col-sm-4 col-lg-2 " id="dash_Sidebar">
+            <div class="col col-sm-4 col-md-4 col-lg-2 p-0 p-md-3" id="dash_Sidebar">
                
                 <?php include "includes/sidebar.php"; ?>    
                 

@@ -1,3 +1,19 @@
+<?php ob_start(); ?>
+
+<?php
+
+// Database Connection
+include "../includes/db.php";
+
+// Navigation Bar
+include "includes/nav.php";
+
+// Category Page Functions => include
+include "includes/functions.php";
+
+?>
+
+
 <!doctype html>
 <html lang="en"> <!-- START OF: <html> -->
   <head> <!-- START OF: <head> -->
@@ -38,7 +54,7 @@
     
     
     <!-- Change the title of the website -->
-    <title><?php echo $page_Title; ?></title>
+    <title>Categories <?php //echo $page_Title; ?></title>
     
     
   </head> <!-- END OF: <head> -->

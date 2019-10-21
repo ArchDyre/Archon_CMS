@@ -1,18 +1,3 @@
-<?php
-
-    // Includes:
-    // EXAMPLE: ` include "file.php"; `
-    include "includes/db.php";
-
-    session_start();
-
-
-
-
-
-?>
-
-
     <!-- header => include -->
     <?php include "includes/header.php"; ?>
     

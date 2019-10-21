@@ -21,21 +21,47 @@
 
                     <h1 class="my-4">
                      
-                     <?php echo $page_Title; ?>
+                     Search results for: <span class="font-weight-bold"> <?php echo $_POST['sidebar_Search']; ?></span>
+                     
+                     <?php // echo $page_Title; ?>
                       
                     </h1> <!-- /. -->
 
-                    
-                       
+                    <?php
+            
+                    if(isset($_POST['search_submit'])){
                         
-                           
-                           <!-- Creates posts -->
-                           <?php  
-                            
-                                $query = "SELECT * FROM `posts`";
-                                $results = mysqli_query($link, $query);
+                        $search_Query = $_POST['sidebar_Search'];
+                        
+                        // Prepare query to find related contents to the users' search query
+                        $query = "SELECT * FROM `posts` WHERE `post_tags` LIKE '%".mysqli_real_escape_string($link,$search_Query)."%' OR `post_title` LIKE '%".mysqli_real_escape_string($link,$search_Query)."%' OR `post_content` LIKE '%".mysqli_real_escape_string($link,$search_Query)."%'";
+                        
+                        $search_Results = mysqli_query($link,$query);
+                        
+                        // run the mysqli query to find relatable results
+                        $search_Results = mysqli_query($link,$query);
 
-                                while($row = mysqli_fetch_assoc($results)){
+                        // if the query did not work, the connection is killed with an error.
+                        if(!$search_Results){
+                            
+                            die("QUERY FAILED" . mysqli_error($link));
+                            
+                        }
+                        
+                        // See if there were any query results found (number wise)
+                         
+                        
+                        $count = mysqli_num_rows($search_Results);
+                        
+                       if($count == 0){
+                            
+                            echo "No search results found...";
+                            
+                        }else{
+                            
+                            // Creates posts 
+
+                                while($row = mysqli_fetch_assoc($search_Results)){
                                     
                                     $post_Title = $row['post_title'];
                                     $post_Author = $row['post_author'];
@@ -74,23 +100,13 @@
                                     
 
                         <!-- Open php to `enclose` the `while` loops closing tag -->
-                         <?php  } ?> <!-- Close php `while` loop -->
+                         <?php  } 
                             
-                            
-                     
-
-                    <!-- Pagination -->
-                    <ul class="pagination justify-content-center mb-4">
-                       
-                        <li class="page-item">
-                            <a class="page-link" href="#">&larr; Older</a>
-                        </li> <!-- /. -->
+                        }
+                    
                         
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#">Newer &rarr;</a>
-                        </li> <!-- /. -->
-                        
-                    </ul> <!-- /. -->
+                    }?> <!-- Close php `while` loop -->
+       
 
                 </div> <!-- /. -->
 

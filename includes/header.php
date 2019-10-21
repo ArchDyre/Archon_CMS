@@ -1,3 +1,11 @@
+<?php ob_start(); ?>
+<?php
+
+include "includes/db.php";
+
+?>
+
+
 <!doctype html>
 <html lang="en"> <!-- START OF: <html> -->
   <head> <!-- START OF: <head> -->
