@@ -5,9 +5,6 @@
 // Database Connection
 include "../includes/db.php";
 
-// Navigation Bar
-include "includes/nav.php";
-
 // Category Page Functions => include
 include "includes/functions.php";
 

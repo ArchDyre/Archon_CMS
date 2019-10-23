@@ -15,18 +15,31 @@ function cat_View_All(){
 
         $cat_Id = $row['cat_id'];
         $cat_Title = $row['cat_title'];
+        
+        // Ensures that the `category -unsorted-` can't be deleted
+        if($cat_Id != 1){
+            
+            // Start of table-row                                            
+            echo "<tr>";
 
-        // Start of table-row                                            
-        echo "<tr>";
+                echo "<td scope='row' class='text-center'>".$cat_Id."</td>";
+                echo "<td>".$cat_Title."</td>";
+                echo "<td class='text-center'><a href='categories.php?edit=".$cat_Id."'>Edit</a></td>";
+                echo "<td class='text-center'><a href='categories.php?delete=".$cat_Id."'>Delete</a></td>";
 
-            echo "<td scope='row' class='text-center'>".$cat_Id."</td>";
-            echo "<td>".$cat_Title."</td>";
-            echo "<td class='text-center'><a href='categories.php?edit=".$cat_Id."'>Edit</a></td>";
-            echo "<td class='text-center'><a href='categories.php?delete=".$cat_Id."'>Delete</a></td>";
+            echo "</tr>"; /* <!-- /.tr --> */
+            
+        }elseif($cat_Id == 1){
+            
+            // Start of table-row                                            
+            echo "<tr>";
 
-        echo "</tr>"; /* <!-- /.tr --> */
+                echo "<td scope='row' class='text-center'>".$cat_Id."</td>";
+                echo "<td>".$cat_Title."</td>";
 
-
+            echo "</tr>"; /* <!-- /.tr --> */
+            
+        }
 
     }
     
@@ -55,9 +68,27 @@ function cat_Delete(){
             die("QUERY FAILED: " . mysqli_error($link));
 
         }else{
+            
+            // Prepare query statement to CHANGE the category (cat_id) of posts with thedeleted `cat_id`
+            $query = "UPDATE `posts` SET `post_category_id` = 1 WHERE `post_category_id` = '".mysqli_real_escape_string($link,$cat_Get_Id)."'";
 
-            // Used to refresh the page
-            header("Location: categories.php");
+            // Run delete query and assign to variable to ensure it executed
+            $run = mysqli_query($link,$query);
+
+            if(!$run){
+
+                die("QUERY FAILED: " . mysqli_error($link));
+
+            }else{
+                
+                // Repeat query until all related posts have been affected
+                while($row = mysqli_fetch_assoc($run)){}
+
+
+                // Used to refresh the page
+                header("Location: categories.php");
+
+            }
 
         }
 

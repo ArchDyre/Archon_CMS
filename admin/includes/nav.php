@@ -1,5 +1,5 @@
 <!-- Inserts the `navbar` -->
-<div class="container-fluid mx-0 px-0 mb-0" id="nav"> <!-- START OF: .container-fluid -->
+<div class="container-fluid mx-0 px-0 mb-0 desktop_Nav_Display" id="nav"> <!-- START OF: .container-fluid -->
 
     <!-- START OF: NAV 01 -->
     <nav class="navbar navbar-expand-md navbar-dark my-auto bg-dark">
@@ -21,7 +21,7 @@
 
                         <a class="navbar-brand text-light mx-2" id="brand_Logo" href="#">
 
-                            <img class="text-light" src="../images/Capture_Modified_Transparent_New_2.png" height="50" alt="Archon CMS logo">
+                            <img class="text-light" src="../images/logo/Capture_Modified_Transparent_New.png" height="50" alt="Archon CMS logo">
 
                         </a> <!-- -->
 
@@ -46,11 +46,13 @@
 
                                 </form> <!-- END OF: search form -->
 
-                                <button type="button" class="btn text-light mx-2"><img src="images/icons/chat-alt-solid-light.png" alt="Defaut Profile Icon" style="width: 16px; height: 16px;"></button> <!-- / -->
+                                <!-- <button type="button" class="btn text-light mx-2"><img src="images/icons/chat-alt-solid-light.png" alt="Defaut Profile Icon" style="width: 16px; height: 16px;"></button> -->
 
-                                <button type="button" class="btn text-light mx-2"><img src="images/icons/notification-solid-light.png" alt="Defaut Profile Icon" style="width: 16px; height: 16px;"></button> <!-- / -->
-
-                                <button type="button" class="btn text-light dropdown-toggle mx-2" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20"><img src="../images/person-solid-white.png" alt="Defaut Profile Icon" style="width: 16px; height: 16px;"></button> <!-- /Account -->
+                                <button type="button" class="btn text-light mx-2"><img src="images/icons/notification-outline-light.png" alt="Defaut Profile Icon" style="width: 16px; height: 16px;"></button> <!-- / -->
+                                
+                                
+                                <!-- Drop Down Login/Register -->
+                                <button type="button" class="btn text-light dropdown-toggle mx-2" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20"><img src="images/icons/person-outline-light.png" alt="Defaut Profile Icon" style="width: 16px; height: 16px;"></button> <!-- /.Account -->
 
                                 <form class="dropdown-menu dropdown-menu-right mr-1 p-4 px-4 py-3 p-4 mt-2 mr-2" method="post">
 
@@ -100,3 +102,204 @@
     </nav><!-- /.NAV 01 -->
 
 </div> <!-- /#nav -->
+
+
+<!-- Mobile Menu -->
+<div class="container-fluid w-100 px-0 mx-0 mobile_Nav_Display">
+
+    <!-- START OF: NAV Mobile -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light my-auto bg-dark">
+        
+        <!-- Archon CMS - Logo -->
+        <a class="navbar-brand" href="#"><img src="../images/logo/Capture_Modified_Transparent_New.png" alt="Archon CMS Logo" height="50"></a>
+        
+        <!--  Toggler btn && Icon Image -->
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="border-color: transparent !important;">
+
+        <img src="images/icons/list-round-solid-light.png" height="20">
+
+        </button> <!-- /. button -->
+
+        <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+
+            <ul class="navbar-nav mr-auto pt-3">
+
+                <div class="row">
+
+                    <div class="col-6">
+
+                        <!-- Mobile - Dashboard -->
+                        <li class="nav-item">
+
+                            <p class="p-0 m-0"><img src="images/icons/shield-outline-light.png" class="" alt="" style="width: 15px;"></p>
+                            <a class="nav-link pt-0 text-light" href="dashboard.php">Login</a>
+
+                        </li> <!-- /. Mobile - Login -->
+
+                        <!-- Mobile - Dashboard -->
+                        <li class="nav-item" hidden>
+
+                            <p class="p-0 m-0"><img src="images/icons/home-outline-light.png" class="" alt="" style="width: 15px;"></p>
+                            <a class="nav-link pt-0 text-light" href="dashboard.php">Register</a>
+
+                        </li> <!-- /. Mobile - Register -->
+
+                        <!-- Mobile - Dashboard -->
+                        <li class="nav-item" hidden>
+
+                            <p class="p-0 m-0"><img src="images/icons/home-outline-light.png" class="" alt="" style="width: 15px;"></p>
+                            <a class="nav-link pt-0 text-light" href="dashboard.php">Log Out</a>
+
+                        </li> <!-- /. Mobile - Log out -->
+
+
+                    </div> <!-- /. col-6 -->
+
+                    <div class="col-6">
+
+                        <li class="nav-item">
+
+                            <p class="p-0 m-0"><img src="images/icons/notification-outline-light.png" alt="Defaut Profile Icon" style="width: 16px; height: 16px;"></p>
+                            <a class="nav-link pt-0 text-light" href="dashboard.php">Notifications</a>
+
+                        </li> <!-- /. Mobile - Notifications -->
+
+
+                    </div> <!-- /. col-6 -->
+
+                </div> <!-- /.row -->
+
+            </ul> <!-- /. ul -->
+
+            <!-- Divider -->
+            <div class="dropdown-divider" style="border-width: thick;"></div>
+
+            <ul class="navbar-nav mr-auto py-3">
+
+                <!-- Mobile - Dashboard -->
+                <li class="nav-item ">
+
+                    <p class="p-0 m-0"><img src="images/icons/home-outline-light.png" class="" alt="" style="width: 15px;"></p>
+                    <a class="nav-link pt-0 text-light" href="dashboard.php">Dashboard</a>
+
+                </li> <!-- /. Mobile - Dashboard -->
+
+
+                <!-- Divider -->
+                <div class="dropdown-divider"></div>
+
+
+                <!-- Mobile - Posts -->
+                <li class="nav-item dropdown">
+
+                    <p class="p-0 m-0"><img src="images/icons/paper-rocket-outline-light.png" class="" alt="" style="width: 15px;"></p>
+                    <a class="nav-link dropdown-toggle text-light pt-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                        Posts
+
+                    </a> <!-- /. -->
+
+                    <div class="dropdown-menu text-center py-2" aria-labelledby="navbarDropdown">
+
+                        <a class="dropdown-item" href="#">View all</a>
+                            <div class="dropdown-divider w-25 mx-auto border-dark"></div>
+                        <a class="dropdown-item" href="#">New post</a>
+                            <div class="dropdown-divider w-25 mx-auto border-dark"></div>
+                        <a class="dropdown-item" href="#">Categories</a>
+                            <div class="dropdown-divider w-25 mx-auto border-dark"></div>
+                        <a class="dropdown-item" href="#">Comments</a>
+
+                    </div> <!-- /. -->
+
+                </li> <!-- /. Mobile - Posts -->
+
+
+                <!-- Divider -->
+                <div class="dropdown-divider"></div>
+
+
+                <!-- Mobile - Categories -->
+                <li class="nav-item">
+
+                    <p class="p-0 m-0"><img src="images/icons/book-open-outline-light.png" class="mx-2" alt="" style="width: 15px;"></p>
+                    <a class="nav-link text-light pt-0" href="categories.php">Categories</a>
+
+                </li> <!-- /. Mobile - Categories -->
+
+
+                 <!-- Divider -->
+                <div class="dropdown-divider"></div>
+
+
+                <!-- Mobile - Comments -->
+                <li class="nav-item">
+
+                    <p class="p-0 m-0"><img src="images/icons/chat-alt-double-outline-light.png" class="mx-2" alt="" style="width: 15px;"></p>
+                    <a class="nav-link text-light pt-0" href="#">Comments</a>
+
+                </li> <!-- /. Mobile - Comments -->
+
+                <!-- Divider -->
+                <div class="dropdown-divider"></div>
+
+
+                <!-- Mobile - Users -->
+
+
+                <li class="nav-item dropdown">
+
+                    <p class="p-0 m-0"><img src="images/icons/many-people-outline-light.png" class="mx-2" alt="" style="width: 15px;"></p>
+                    <a class="nav-link dropdown-toggle text-light pt-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                        Users
+
+                    </a> <!-- /. -->
+
+                    <div class="dropdown-menu text-center py-2" aria-labelledby="navbarDropdown">
+
+                        <a class="dropdown-item" href="#">View all</a>
+                            <div class="dropdown-divider w-25 mx-auto border-dark"></div>
+                        <a class="dropdown-item" href="#">Add new user</a>
+                            <div class="dropdown-divider w-25 mx-auto border-dark"></div>
+                        <a class="dropdown-item" href="#">Recent activity</a>
+
+                    </div> <!-- /. -->
+
+                </li> <!-- /. Mobile - Users -->
+
+
+                <!-- Divider -->
+                <div class="dropdown-divider"></div>
+
+
+                <!-- Mobile - Profile -->
+
+
+                <li class="nav-item">
+
+                    <p class="p-0 m-0"><img src="images/icons/settings-outline-light.png" class="mx-2" alt="" style="width: 15px;"></p>
+                    <a class="nav-link text-light pt-0" href="#">Profile</a>
+
+                </li> <!-- /. Mobile - Profile -->
+
+                <!-- Divider -->
+                <div class="dropdown-divider"></div>
+
+
+            </ul> <!-- /. ul -->
+
+            <!-- Search Form - Mobile Nav -->
+            <div class="row ">
+
+                <form class="form-group text-center mx-auto py-3 m-0">
+                    <input class="form-control my-1" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn custom_Btn my-3 my-sm-0 text-light" type="submit">Search</button>
+                </form>
+
+            </div> <!-- /.row -->
+
+        </div> <!-- /. -->
+
+    </nav><!-- /.NAV Mobile -->
+
+</div> <!-- /. Mobile Menu -->

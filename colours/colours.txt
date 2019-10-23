@@ -1,0 +1,8 @@
+gray (background) - #313538
+
+
+lighter Purple (Btn) - #844eb1
+
+darker Purple (complementary) - #524eb1
+
+Blue (Complemetary) - #4e7bb1

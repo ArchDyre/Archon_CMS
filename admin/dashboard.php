@@ -17,12 +17,12 @@
     <!-- nav-bar => include -->
     <?php include "includes/nav.php"; ?>
     
-    
-    <div class="container-fluid h-100 m-0"> <!-- START OF: .container -->
+    <!-- START OF: .container -->
+    <div class="container-fluid h-100 m-0"> 
         
         <div class="row">
             
-            <div class="col col-sm-4 col-md-4 col-lg-2 p-0 p-md-3" id="dash_Sidebar">
+            <div class="col-2 dash_Sidebar desktop_Nav_Display">
                
                 <?php include "includes/sidebar.php"; ?>    
                 
@@ -30,8 +30,8 @@
             
             
             
-            
-            <div class="col overflow-auto p-0">
+            <!-- Inner Content -->
+            <div class="col-12 col-md-10 px-0">
                 
                 <!-- Breadcrumbs-->
                 <ol class="breadcrumb">
@@ -42,14 +42,14 @@
                 </ol> <!-- /. breadcrumbs -->
                 
                 
-                <div class="container-fluid">
+                <div class="container-fluid mb-5 pt-3">
 
                         
 
                         <!-- Icon Cards -->
                         <div class="row">
 
-                            <div class="col mt-0 mb-3">
+                            <div class="col-12 col-md mt-0 mb-3">
 
                                 <div class="card bg-primary">
 
@@ -63,7 +63,7 @@
 
                             </div> <!-- /.col -->
 
-                            <div class="col mt-0 mb-3">
+                            <div class="col-12 col-md mt-0 mb-3">
 
                                 <div class="card bg-success">
 
@@ -77,7 +77,7 @@
 
                             </div> <!-- /.col -->
 
-                            <div class="col mt-0 mb-3">
+                            <div class="col-12 col-md mt-0 mb-3">
 
                                 <div class="card bg-info">
 
@@ -91,7 +91,7 @@
 
                             </div> <!-- /.col -->
 
-                            <div class="col mt-0 mb-3">
+                            <div class="col-12 col-md mt-0 mb-3">
 
                                 <div class="card bg-danger">
 
@@ -105,57 +105,57 @@
 
                             </div> <!-- /.col -->
 
-                        </div>
-
-                        <!-- Table -->
-                        <table class="table table-striped table-hover" id="dash_Table" cellspacing="0" width="100%">
-  
-                            <thead class="thead-dark table-responsive{-sm|-md|-lg|-xl}">
-                                <tr>
-                                    <th scope="col" class="th-sm">Date</th>
-                                    <th scope="col" class="th-sm">New Users</th>
-                                    <th scope="col" class="th-sm">Total Users</th>
-                                    <th scope="col" class="th-sm">Total Posts</th>
-                                    <th scope="col" class="th-sm">Total Views</th>
-                                </tr> <!-- /tr -->
-                            </thead> <!-- /thead -->
-                            
-                            <tbody>
-                                <tr>
-                                    <td scope="row">Current_Date</td>
-                                    <td>17</td>
-                                    <td>25</td>
-                                    <td>10</td>
-                                    <td>250</td>
-                                </tr> <!-- /tr -->
-                                
-                                <tr>
-                                    <td scope="row">Current_Date</td>
-                                    <td>5</td>
-                                    <td>8</td>
-                                    <td>6</td>
-                                    <td>50</td>
-                                </tr> <!-- /tr -->
-                                   
-                                <tr>
-                                    <td scope="row">Current_Date</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>15</td>
-                                </tr> <!-- /tr -->
-                                
-                                
-                                
-                            </tbody> <!-- /tbody -->
-                            
-                            
-                        </table> <!-- /.table -->
+                        </div> <!-- /. row -->
                         
+                        <div class="table-responsive">
+                            <!-- Table -->
+                            <table class="table table-striped table-hover mt-3" cellspacing="0" width="100%">
+
+                                <thead class="thead-dark table-responsive{-sm|-md|-lg|-xl}">
+                                    <tr>
+                                        <th scope="col" class="th-sm">Date</th>
+                                        <th scope="col" class="th-sm">New Users</th>
+                                        <th scope="col" class="th-sm">Total Users</th>
+                                        <th scope="col" class="th-sm">Total Posts</th>
+                                        <th scope="col" class="th-sm">Total Views</th>
+                                    </tr> <!-- /tr -->
+                                </thead> <!-- /thead -->
+
+                                <tbody>
+                                    <tr>
+                                        <td scope="row">Current_Date</td>
+                                        <td>17</td>
+                                        <td>25</td>
+                                        <td>10</td>
+                                        <td>250</td>
+                                    </tr> <!-- /tr -->
+
+                                    <tr>
+                                        <td scope="row">Current_Date</td>
+                                        <td>5</td>
+                                        <td>8</td>
+                                        <td>6</td>
+                                        <td>50</td>
+                                    </tr> <!-- /tr -->
+
+                                    <tr>
+                                        <td scope="row">Current_Date</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>15</td>
+                                    </tr> <!-- /tr -->
+
+
+
+                                </tbody> <!-- /tbody -->
+
+
+                            </table> <!-- /.table -->
+                        </div> <!-- /. table-responsive -->
                         
 
-                </div>
-                <!-- /.container-fluid -->
+                
                 
                 
                 

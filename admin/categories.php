@@ -1,12 +1,20 @@
     <!-- header => include -->
     <?php include "includes/header.php"; ?>
-
+    <!-- nav-bar => include -->
+    <?php include "includes/nav.php"; ?>
     
-    <div class="container-fluid h-100 m-0"> <!-- START OF: .container -->
+<!--     Mobile menu-->
         
+        
+
+    <!-- START OF: .container -->
+    <div class="container-fluid h-100 m-0"> 
+        
+        <!-- Sidebar + Content display area -->
         <div class="row">
             
-            <div class="col col-sm-4 col-md-4 col-lg-2 p-0 p-md-3" id="dash_Sidebar">
+            <!-- Side Bar -->
+            <div class="col-2 dash_Sidebar desktop_Nav_Display">
                
                 <?php include "includes/sidebar.php"; ?>    
                 
@@ -14,8 +22,8 @@
             
             
             
-            
-            <div class="col overflow-auto p-0">
+            <!-- Inner Content -->
+            <div class="col-12 col-md-10 px-0">
                 
                 <!-- Breadcrumbs-->
                 <ol class="breadcrumb">
@@ -27,82 +35,80 @@
                 
                 
                 
-                
-                <div class="container-fluid h-75 overflow-auto">
-                    <div class="row align-items-center h-100">
+                <!-- Content -->
+                <div class="container-fluid h-75 w-100">
+                    <div class="row align-items-center w-100 h-100 align-items-center">
                             
-                            <div class="col"></div> <!-- /.col -->
-                            
-                            <div class="col-5">
-                                
-                                
-                                
-                                
-                                
-                                <div class="row w-100 m-3">
-                                    
-                                    
-                                    <div class="col">
-                                        
-                                        <?php
-                                
-                                            // ADD - categories function()
-                                            cat_Add();
+                            <!-- Add Category && Update Category -->
+                            <div class="col-12 col-md-6 py-3 px-0 mx-0">
+                                <div class="container-fluid">
+                                    <div class="row w-100 m-3">
 
-                                        ?> <!-- /PHP -->
-                                        
-                                        <!-- Categories - ADD -->
-                                        <form action="" method="post" class="border border-dark p-3">
+                                        <div class="col">
 
-                                            <div class="form-group text-center">
+                                            <?php
 
-                                                <label>Add Category</label>
-                                                <input type="text" name="cat_Title" class="form-control text-center">
+                                                // ADD - categories function()
+                                                cat_Add();
 
-                                            </div> <!-- /.form-group -->
+                                            ?> <!-- /PHP -->
 
-                                            <div class="form-group">
+                                            <!-- Categories - ADD -->
+                                            <form action="" method="post" class="border border-dark p-3">
 
-                                                <input type="submit" name="cat_Title_Submit" value="Add Category" class="btn btn-primary form-control">
+                                                <div class="form-group text-center">
 
-                                            </div> <!-- /.form-group -->
+                                                    <label>Add Category</label>
+                                                    <input type="text" name="cat_Title" class="form-control text-center">
 
-                                        </form> <!-- /.form -->
-                                        
-                                    </div> <!-- /.col -->
-                                    
-                                    
-                                </div> <!-- /.row -->
+                                                </div> <!-- /.form-group -->
+
+                                                <div class="form-group">
+
+                                                    <input type="submit" name="cat_Title_Submit" value="Add Category" class="btn btn-primary form-control">
+
+                                                </div> <!-- /.form-group -->
+
+                                            </form> <!-- /.form -->
+
+                                        </div> <!-- /.col -->
+
+
+                                    </div> <!-- /.row -->
+                                </div> <!-- /. container-fluid -->    
                                   
-                                <div class="row w-100 m-3"></div> <!-- /.row -->  
-                                   
-                                <div class="row w-100 m-3">
-                                    
-                                    <div class="col">
-                                        
-                                        <!-- Insert `edit` form && `php` -->
-                                        <?php
-                                        
-                                            if(isset($_GET['edit'])){
+                                <div class="container-fluid"><div class="row w-100 m-3"></div> <!-- /.row --></div> <!-- /. container-fluid --> 
+                                
+                                  
+                                 <div class="container-fluid">  
+                                    <div class="row w-100 m-3">
 
-                                                include "includes/cat_update.php";
+                                        <div class="col">
 
-                                            } 
-                                                                                  
-                                        ?> <!-- /. php -->
-                                        
-                                    </div> <!-- /.col -->
-                                    
-                                    
-                                </div> <!-- /.row -->
+                                            <!-- Insert `edit` form && `php` -->
+                                            <?php
 
-                            </div> <!-- /.col-6 -->
+                                                if(isset($_GET['edit'])){
+
+                                                    include "includes/cat_update.php";
+
+                                                } 
+
+                                            ?> <!-- /. php -->
+
+                                        </div> <!-- /.col -->
+
+
+                                    </div> <!-- /.row -->
+                                </div> <!-- /. container-fluid -->
+
+                            </div> <!-- /. Add Category && Update Category -->
                             
-                            <div class="col-1"></div> <!-- /.col-2 -->
+                            
                             
                             
                             <!-- Displays current categories -->
-                            <div class="col-4">
+                            <div class="col-12 col-md-6 py-3 px-auto mx-0 table-responsive">
                                
                                 <table class="table table-striped table-bordered table-hover">
                                    
@@ -139,17 +145,13 @@
                                 </table> <!-- /. table -->
                                 
                             </div> <!-- /.col -->
-                            
-                            <div class="col"></div> <!-- /.col -->
 
 
                     </div> <!--/.row -->
+                    
                 </div> <!-- /.container-fluid -->
                 
-                
-                
-                
-                
+
                 <!-- Footer - include -->
                 <?php include "includes/footer.php"; ?>
                 

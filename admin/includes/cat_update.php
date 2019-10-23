@@ -7,7 +7,9 @@
 
         <!-- Start of Php -->
         <?php
-
+                
+            if($_GET['edit'] != 1 && $_GET['edit'] != 0){
+                                                    
                 // Assign `GET[]` id to variable 
                 $cat_Id_Edit = $_GET['edit'];
 
@@ -31,7 +33,15 @@
                     $edit_Cat_Title = $row['cat_title'];
 
                 } 
-                // /. else -->
+                // /. else -->                                     
+                                                    
+            }else{
+
+                echo "<div class='alert alert-danger text-center'>The selected category can't be edited.</div>";
+
+            }
+        
+                
 
                 ?> <!-- /. php -->
 

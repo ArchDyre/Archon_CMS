@@ -1,0 +1,123 @@
+@page {
+    size: landscape;
+}
+
+body {
+    height: auto; /* body height is 100% in global settings, which adds an extra blank page when print */
+}
+
+._222x1cKsI7jSahOLCq8TJ0 {
+    max-width: 1024px;
+    height: auto;
+    min-height: 0;
+}
+
+[dir] ._222x1cKsI7jSahOLCq8TJ0 {
+    margin: 8px auto;
+    padding: 5vh 8px 8px;
+    border: 1px solid rgba(14, 19, 24, 0.45);
+}
+
+.m1aLEtpvbn5W-9-yBptU4 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+[dir] .m1aLEtpvbn5W-9-yBptU4 {
+    margin-bottom: 3vh;
+}
+@media (min-width: 48em) {
+    .m1aLEtpvbn5W-9-yBptU4 {
+        flex-wrap: nowrap;
+    }
+}
+
+._1b64iE-eImNpvDNTXqd1rq {
+    flex-shrink: 1;
+    max-width: 225px;
+}
+
+[dir=ltr] ._1b64iE-eImNpvDNTXqd1rq {
+  margin: 0 16px 0 0;
+}
+
+[dir=rtl] ._1b64iE-eImNpvDNTXqd1rq {
+    margin: 0 0 0 16px;
+}
+
+[dir=ltr] ._1b64iE-eImNpvDNTXqd1rq:last-child {
+  margin-right: 0;
+}
+
+[dir=rtl] ._1b64iE-eImNpvDNTXqd1rq:last-child {
+    margin-left: 0;
+}
+
+._3KfDjVp6svgpt8D0tGkZH7 {
+    width: 100%;
+    height: auto;
+}
+
+[dir] ._3KfDjVp6svgpt8D0tGkZH7 {
+    margin-bottom: 3vh;
+}
+
+/* some values are hardcoded as design for this special print page*/
+._3dVAAekyWr6hAvCs173h79 {
+    letter-spacing: 1.35px;
+    line-height: 26px;
+    text-transform: uppercase;
+}
+
+.tPOnG0uBjX8Q9U2jgJEKW {
+    letter-spacing: 1.35px;
+    line-height: 26px;
+    text-transform: uppercase;
+}
+
+[dir] .tPOnG0uBjX8Q9U2jgJEKW {
+    padding: 1.2vh 0;
+}
+
+._2vrQYyoNBM4M4Sej_TsDWq {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+._3a-qXRRqKSkHQQichg_Un2 {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+._2ChRruYMbsjkiCS1qjQlyF {
+    display: none;
+}
+
+[dir=ltr] ._2ChRruYMbsjkiCS1qjQlyF {
+  margin-left: 8px;
+}
+
+[dir=rtl] ._2ChRruYMbsjkiCS1qjQlyF {
+    margin-right: 8px;
+}
+
+@media (min-width: 48em) {
+    ._2ChRruYMbsjkiCS1qjQlyF {
+        display: block;
+    }
+}
+@media print {
+    ._2ChRruYMbsjkiCS1qjQlyF {
+        display: block;
+    }
+}
+
+.HSe3i1JwSybgVhxXY12EG {
+    width: 60px;
+    height: 60px;
+}
+
