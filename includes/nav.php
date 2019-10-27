@@ -175,38 +175,9 @@
                                     <!-- /. DEV ACCESS - ADMIN AREA -->
                                     
                                     
-                            <!-- START OF: php -->
-                            <?php
-
-                                
-                                // Displays `categories`
-                                $query = " SELECT * FROM `categories` ";
-                                $results = mysqli_query($link, $query);
-
-
-                                    while ($row = mysqli_fetch_assoc($results)) {
-                                        
-                                        if ($row['cat_id'] != 1){
-                                            
-                                            $cat_Title = $row['cat_title'];
-                                                                              
-                                        ?> 
-                                    <!-- /. php --> 
-
-                                            <a class='nav-item nav-link text-light' href='#'>
-
-                                                <?php echo $cat_Title; ?>
-
-                                            </a> <!-- /. a -->
-
-                                            <span class='vertical_Line desktop_Nav_Display my-auto'></span>
-                                            <span > <hr class='m-auto border-light mobile_Nav_Display'></span>;
-                                            
-                                <!-- START OF: php -->           
-                                 <?php  }
-
-                                    } ?> 
-                                    <!-- /. php -->
+                                    <!-- Include method nav_Categories() TO `display` navigation bar categories -->
+                            		<?php $user_Categories = new UserCategories(); $user_Categories -> nav_Categories(); ?>
+                                    
                                     
                                     
                                     <!-- DEV ACCESS - ADMIN AREA -->

@@ -98,7 +98,7 @@ class UserCategories{
         
         // Displays `categories`
         // Limited to max -> 6 categories
-        $query = " SELECT * FROM `categories` LIMIT 6";
+        $query = " SELECT * FROM `categories`";
         $results = mysqli_query($link, $query);
         
         $number_Categories = mysqli_num_rows($results);
@@ -112,11 +112,11 @@ class UserCategories{
         
         */
         
-        while ($n <= $number_Categories) {
+        while ($n <= 6) {
             
             
             // Left Categories display area
-            if($n <= ceil($number_Categories/2)){
+            if($n <= 3){
                 
                 
                 echo "<div class='col-lg-6'>";
@@ -124,7 +124,7 @@ class UserCategories{
                     echo "<ul class='list-unstyled mb-0'>";
                     
                     
-                    while($n <= ceil($number_Categories/2)){
+                    while($n <= 3){
                         
                         $row = mysqli_fetch_assoc($results);
                         
@@ -133,25 +133,24 @@ class UserCategories{
                             
                             if(isset($_GET['cat-zone']) && $_GET['cat-zone'] == $row['cat_id']){
                                 
-                                $hide_Cat = "hidden";
+                                // Nothing Happens
                                 
                             }else{
                                 
-                                $hide_Cat = "";
+                                $this -> cat_Id = $row['cat_id'];
+                                $this -> cat_Title = $row['cat_title'];
+                                
+                                echo
+                                
+                                "<li>
+                                    <a href='index.php?cat-zone={$this -> cat_Id}'>{$this -> cat_Title}</a>
+                                </li> <!-- /. -->";
+                                
+                                // Add +1 at the end of the loop
+                                $n ++;
                                 
                             }
                             
-                            $this -> cat_Id = $row['cat_id'];
-                            $this -> cat_Title = $row['cat_title'];
-                            
-                            echo
-                            
-                            "<li {$hide_Cat}>
-                                <a href='index.php?cat-zone={$this -> cat_Id}'>{$this -> cat_Title}</a>
-                            </li> <!-- /. -->";
-                            
-                            // Add +1 at the end of the loop
-                            $n ++;
                             
                         }
                     }
@@ -164,31 +163,39 @@ class UserCategories{
                 
                 // Right side of categories display area
                 
-            }else{
+            }elseif($n <= 6){
                 
                 echo "<div class='col-lg-6'>";
                 
                     echo "<ul class='list-unstyled mb-0'>";
                     
                     
-                    while($n >= ceil($number_Categories/2) && $n <= $number_Categories){
+                    while($n >= 3 && $n <= 6){
                         
                         $row = mysqli_fetch_assoc($results);
                         
                         // Ensures that `uncategorized` && `Latest` Categories aren't displayed on categories sidebar display.
                         if($row['cat_id'] != 1 && $row['cat_id'] != 2){
                             
-                            $this -> cat_Id = $row['cat_id'];
-                            $this -> cat_Title = $row['cat_title'];
-                            
-                            echo
-                            
-                            "<li>
-                                <a href='index.php?cat-zone={$this -> cat_Id}'>{$this -> cat_Title}</a>
-                            </li> <!-- /. -->";
-                            
-                            // Add +1 at the end of the loop
-                            $n ++;
+                            if(isset($_GET['cat-zone']) && $_GET['cat-zone'] == $row['cat_id']){
+                                
+                                // Nothing Happens
+                                
+                            }else{
+                                
+                                $this -> cat_Id = $row['cat_id'];
+                                $this -> cat_Title = $row['cat_title'];
+                                
+                                echo
+                                
+                                "<li>
+                                    <a href='index.php?cat-zone={$this -> cat_Id}'>{$this -> cat_Title}</a>
+                                </li> <!-- /. -->";
+                                
+                                // Add +1 at the end of the loop
+                                $n ++;
+                                
+                            }
                             
                         }
                         
@@ -209,6 +216,42 @@ class UserCategories{
     }
     /* /. generate_Cat */
     
+    // Used to generate the navigation-bar `categories`
+    function nav_Categories(){
+        
+        global $link;
+        
+        // Displays `categories`
+        $query = " SELECT * FROM `categories`";
+        
+        $results = mysqli_query($link, $query);
+        
+        
+        while ($row = mysqli_fetch_assoc($results)) {
+            
+            if ($row['cat_id'] != 1){
+                
+                $this -> cat_Id = $row['cat_id'];
+                $this -> cat_Title = $row['cat_title'];
+
+
+                echo 
+                
+                "<a class='nav-item nav-link text-light' href='index.php?cat-zone={$this -> cat_Id}'>
+
+                    {$this -> cat_Title}
+
+                </a> <!-- /. a -->";
+
+                echo "<span class='vertical_Line desktop_Nav_Display my-auto'></span>";
+                echo "<span > <hr class='m-auto border-light mobile_Nav_Display'></span>";
+                
+            }
+
+        }
+        
+    }
+    /* /. nav_Categories */
     
 }
 
