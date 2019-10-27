@@ -46,7 +46,7 @@
     
     <!-- Link to own JavaScript sheets -->
     
-    <script type="text/javascript" src="js/stylesheet.js">
+    <script type="text/javascript" src="scripts/stylesheet.js">
     </script> <!-- /.Link to own JavaScript sheets -->
     
     

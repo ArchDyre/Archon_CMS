@@ -25,13 +25,8 @@
             <!-- Inner Content -->
             <div class="col-12 col-md-10 px-0">
                 
-                <!-- Breadcrumbs-->
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item">
-                    <a href="#">Dashboard</a>
-                  </li>
-                  <li class="breadcrumb-item active">Categories</li>
-                </ol> <!-- /. breadcrumbs -->
+                <!-- Include Breadcrumb -->
+                <?php include "includes/breadcrumb.php";?>
                 
                 
                 
@@ -90,7 +85,7 @@
 
                                                 if(isset($_GET['edit'])){
 
-                                                    include "includes/cat_update.php";
+                                                    include "includes/cat-update.php";
 
                                                 } 
 

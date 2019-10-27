@@ -20,14 +20,8 @@
             <!-- Inner Content -->
             <div class="col-12 col-md-10 px-0">
                 
-                <!-- Breadcrumbs-->
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item">
-                    <a href="#">Dashboard</a>
-                  </li>
-                  <li class="breadcrumb-item active">View All Posts</li>
-                </ol> <!-- /. breadcrumbs -->
-                
+                <!-- Include Breadcrumb -->
+                <?php include "includes/breadcrumb.php";?>
                 
                 
                 
@@ -40,6 +34,7 @@
                         
                         $source = $_GET['source'];
                         
+                        
                     }else{
                         
                         $source = "";
@@ -47,23 +42,30 @@
                     }
                     
                     switch ($source) {
-                            
-                        case 'add_post':
-                            include "includes/add_post.php";
+                        
+                        // Used to display area to `add` a new post
+                        case 'add-post':
+                            include "includes/up-post.php";
                             break;
                         
-                        case 'edit_post':
-                            echo "OOps";
+                        // Used to display area to `edit` a new post
+                        case 'edit-post':
+                            include "includes/up-post.php";
                             break;
+
                         
                             // Displays the default table to `view all posts`
                         default:
                             
-                            include "includes/view_all_posts.php";
+                            include "includes/view-all-posts.php";
                             break;
 
                     }
-
+                        
+                                        
+                    // Runs the delete command
+                    post_Delete();
+                            
 
                     ?> <!-- /. php -->
                     

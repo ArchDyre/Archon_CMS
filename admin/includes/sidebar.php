@@ -26,8 +26,8 @@
                 <div id="accordion_Menu_01" class="collapse" aria-labelledby="dropdown_Header_01" data-parent="#accordion_Posts">
                   <div class="bg-light">
                     <button class="dropdown-item border-bottom py-2 text-wrap text-center" type="button"><a class="nav-link active p-0 text-dark" href="posts.php"><img src="" alt="">View all</a></button>
-                    <button class="dropdown-item border-bottom py-2 text-wrap text-center" type="button"><a class="nav-link p-0 text-dark" href="posts.php?source=add_post"><img src="" alt="">New post</a></button>
-                    <button class="dropdown-item border-bottom py-2 text-wrap text-center" type="button"><a class="nav-link p-0 text-dark" href="posts.php?source=edit_post"><img src="" alt="">Edit post (Remove)</a></button>
+                    <button class="dropdown-item border-bottom py-2 text-wrap text-center" type="button"><a class="nav-link p-0 text-dark" href="posts.php?source=add-post"><img src="" alt="">New post</a></button>
+                    <button class="dropdown-item border-bottom py-2 text-wrap text-center" type="button"><a class="nav-link p-0 text-dark" href="posts.php?source=edit-post"><img src="" alt="">Edit post (Remove)</a></button>
                   </div> <!-- /. -->
                 </div> <!-- /. -->
 
@@ -92,7 +92,22 @@
               <a class="nav-link active text-light py-auto" href="#"><img src="images/icons/settings-outline-light.png" class="mx-2" alt="" style="width: 15px;">Profile</a>
             </button> <!-- /. -->
           </h2> <!-- /. -->
-        </div> <!-- /. -->    
+        </div> <!-- /. -->
+        
+            
+        <!-- DEV ACCESS - ADMIN AREA -->
+        <!-- DEV ACCESS - ADMIN AREA -->
+        <!-- DEV ACCESS - ADMIN AREA -->
+        <div id="dropdown_Header_05">
+          <h2 class="mb-0 ">                                 
+            <button class="btn text-light p-0" id="profile_Btn" type="button">
+              <a class="nav-link active text-danger py-auto" href="../index.php"><img src="images/icons/settings-outline-light.png" class="mx-2" alt="" style="width: 15px;">Home</a>
+            </button> <!-- /. -->
+          </h2> <!-- /. -->
+        </div> <!-- /. -->
+        <!-- /. DEV ACCESS - ADMIN AREA -->
+        <!-- /. DEV ACCESS - ADMIN AREA -->
+        <!-- /. DEV ACCESS - ADMIN AREA -->            
 
 
 

@@ -2,6 +2,26 @@
 
 <?php
 
+// Security Headers
+// External iframes not allowed??
+header("X-Frame-Options: sameorigin"); 
+
+//set headers to NOT cache a page
+header("Cache-Control: no-cache, must-revalidate"); //HTTP 1.1
+header("Pragma: no-cache"); //HTTP 1.0
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
+
+// X-XSS-Protection enables
+header("X-XSS-Protection: 1; mode=block");
+
+// x-content-type
+// Potentially prevents bootstrap from loading
+header("X-Content-Type-Options: nosniff");
+
+// Strict transport security
+header("Strict-Transport-Security: max-age=31536000");
+
+
 // Database Connection
 include "../includes/db.php";
 
@@ -18,13 +38,13 @@ include "includes/functions.php";
     <!-- CSS Links -->
     
         <!-- Link to css normalising sheet. -->
-        <link rel="stylesheet" type="text/css" href="css/normalise.css">
+        <link rel="stylesheet" type="text/css" href="styles/normalise.css">
         
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         
         <!-- Link to css sheet -->
-        <link rel="stylesheet" type="text/css" href="css/dash.css">
+        <link rel="stylesheet" type="text/css" href="styles/dash.css">
     
     
     <!-- IE 8 and below compatibility with HTML5 -->
