@@ -238,7 +238,9 @@ class Posts{
         // Moves the `uploaded user image` to the `image` folder after $_POST[] submit
         move_uploaded_file($new_Variables['post_Temp_Image_Location'], "../images/posts/{$new_Variables['post_Image']}");
         
-        
+        // Inserts <br> tags after `new lines`
+        // Used to display correct for `post- users/readers`
+        $new_Variables['post_Contents'] = nl2br($new_Variables['post_Contents']);
         
         // Insert into DB
         if($new_Variables['post_Type'] == "add"){
