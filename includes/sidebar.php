@@ -37,108 +37,14 @@
         <div class="card-body">
             <div class="row">
                 
+                <!-- Include Generating Sidebar Display `categories` -->
                 <?php 
-    
-                    // Displays `categories`
-                    // Limited to max -> 6 categories
-                    $query = " SELECT * FROM `categories` LIMIT 6";
-                    $results = mysqli_query($link, $query);
-
-                    $number_Categories = mysqli_num_rows($results);
-                    $n = 1;
                 
-                    /* 
-                    
-                    This while loop setup uses `$n` to ensure that there are equal amounts of
-                    categories in both `ul` areas
-                    
-                    
-                    */
-
-                        while ($n <= $number_Categories) {
-                                                       
-                            if($n <= ceil($number_Categories/2)){
-                                
-                            ?> <!-- close php -->
-                               
-                                <div class="col-lg-6">
-
-                                    <ul class="list-unstyled mb-0">
-                                        
-                                        <!-- Start php -->
-                                        <?php
-                                        
-                                            while($n <= ceil($number_Categories/2)){
-                                            
-                                                $row = mysqli_fetch_assoc($results);
-                                                $cat_Title = $row['cat_title'];
-
-                                                echo 
-
-                                                "<li>
-                                                    <a href='#'>".$cat_Title."</a>
-                                                </li> <!-- /. -->";
-
-                                                // Add +1 at the end of the loop
-                                                $n ++;
-                                            
-                                            }
-                            
-
-                                        ?> <!-- close php -->
-
-
-                                    </ul> <!-- /. -->
-
-                                </div> <!-- /. -->
-                            
-                            <!-- Start php -->
-                            <?php         
-                            }else{
-                                
-                                ?> <!-- close php -->
-                                
-                                <div class="col-lg-6">
-
-                                    <ul class="list-unstyled mb-0">
-                                        
-                                        <!-- Start php -->
-                                        <?php
-
-                                        while($n >= ceil($number_Categories/2) && $n <= $number_Categories){
-                                            
-                                            $row = mysqli_fetch_assoc($results);
-                                            $cat_Title = $row['cat_title'];
-                                            
-                                            echo 
-
-                                            "<li>
-                                                <a href='#'>".$cat_Title."</a>
-                                            </li> <!-- /. -->";
-                                            
-                                            // Add +1 at the end of the loop
-                                            $n ++;
-                                            
-                                        }
-
-                                        ?> <!-- close php -->
-
-
-                                    </ul> <!-- /. -->
-
-                                </div> <!-- /. -->
-                                
-                                <!-- Start php -->
-                                <?php
-                                
-                            } // /. if => else
-                            
-                            
-                            
-                            
-                        } // /. while loop
-
-                ?> <!-- close php -->   
+                $user_Categories = new UserCategories();
+                
+                $user_Categories -> generate_Cat();
+                
+                ?>
                 
                 
             </div> <!-- /. -->

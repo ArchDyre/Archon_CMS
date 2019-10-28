@@ -33,13 +33,8 @@
             <!-- Inner Content -->
             <div class="col-12 col-md-10 px-0">
                 
-                <!-- Breadcrumbs-->
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item">
-                    <a href="#">Dashboard</a>
-                  </li>
-                  <li class="breadcrumb-item active">Overview</li>
-                </ol> <!-- /. breadcrumbs -->
+                <!-- Include Breadcrumb -->
+                <?php include "includes/breadcrumb.php";?>
                 
                 
                 <div class="container-fluid mb-5 pt-3">

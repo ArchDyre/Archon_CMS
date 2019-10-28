@@ -2,7 +2,7 @@
 <div class="container-fluid mx-0 px-0 mb-3" id="nav"> <!-- START OF: .container-fluid -->
 
     <!-- START OF: NAV 01 -->
-    <nav class="navbar navbar-expand-md navbar-light bg-light my-auto bg-dark">
+    <nav class="navbar navbar-expand-md navbar-light bg-light my-auto bg-dark px-md-0">
         
         <!-- Mobile: Archon CMS - Logo -->
         <a class="navbar-brand mobile_Nav_Display" href="#"><img src="images/logo/Capture_Modified_Transparent_New.png" alt="Archon CMS Logo" height="50"></a>
@@ -73,7 +73,7 @@
             
             
             <!-- . Nav Content -->
-            <div class="row w-100 desktop_Nav_Display mx-auto">
+            <div class="row w-100  mx-auto ">
                 
                 <!-- ROW: 1 -->
                 <div class="container-fluid">
@@ -152,92 +152,60 @@
                 <!-- ROW 2 -->   
                 <div class="container-fluid">
                     
-                    <div class="row">
+                    <div class="row px-md-3">
                         
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md pr-md-0">
 
-                            <ul class="navbar-nav mr-auto pt-3 py-md-2 text-center">
+                            <ul class="navbar-nav pt-3 py-md-2 text-center">
+                            
+                            
+                                <!-- DEV ACCESS - ADMIN AREA -->
+                                    <!-- DEV ACCESS - ADMIN AREA -->
+                                    <!-- DEV ACCESS - ADMIN AREA -->
+                                    <a class='nav-item nav-link text-danger' href='index.php'>
 
-                            <?php
-
-                                // 
-                                if($page_Title == "Home"){
-
-                                    // Display WITH `active` && `disabled`
-
-                                    ?>
-                                    <!-- /. php -->
-
-                                    <a class='nav-item nav-link active font-weight-bold disabled text-light' href='#'>
-
-                                    Latest
+                                        Home
 
                                     </a> <!-- /. a -->
-                                    <span class='vertical_Line'></span>
-                                    <!-- Divider -->
-                                    <div class='dropdown-divider'></div>
+                                    
+                                    <span class='vertical_Line desktop_Nav_Display my-auto'></span>
+                                    <span > <hr class='m-auto border-light mobile_Nav_Display'></span>;
+                                    <!-- /. DEV ACCESS - ADMIN AREA -->
+                                    <!-- /. DEV ACCESS - ADMIN AREA -->
+                                    <!-- /. DEV ACCESS - ADMIN AREA -->
+                                    
+                                    
+                                    <!-- Include method nav_Categories() TO `display` navigation bar categories -->
+                            		<?php $user_Categories = new UserCategories(); $user_Categories -> nav_Categories(); ?>
+                                    
+                                    
+                                    
+                                    <!-- DEV ACCESS - ADMIN AREA -->
+                                    <!-- DEV ACCESS - ADMIN AREA -->
+                                    <!-- DEV ACCESS - ADMIN AREA -->
+                                    <a class='nav-item nav-link text-danger' href='admin/dashboard.php'>
 
-
-
-                     <!-- START OF: php -->           
-                     <?php      }else{
-
-                                    // Display WITHOUT `active` && `disabled`
-                                    ?> 
-                                    <!-- /. php -->
-
-                                    <a class='nav-item nav-link font-weight-bolder text-light' href='#'>
-
-                                    Latest
+                                        Admin
 
                                     </a> <!-- /. a -->
-                                    <span class='vertical_Line'></span>
-                                    <!-- Divider -->
-                                    <div class='dropdown-divider'></div>
-
-                     <!-- START OF: php -->           
-                     <?php      }
-
-
-                                // Displays `categories`
-                                $query = " SELECT * FROM `categories`s ";
-                                $results = mysqli_query($link, $query);
-
-
-                                    while ($row = mysqli_fetch_assoc($results)) {
-
-                                        $cat_Title = $row['cat_title'];
-
-                                        // echo navlinks    
-                                        ?> 
-                                    <!-- /. php --> 
-
-                                            <a class='nav-item nav-link text-light' href='#'>
-
-                                            <?php echo $cat_Title; ?>
-
-                                            </a> <!-- /. a -->
-
-                                            <span class='vertical_Line'></span>
-                                            <span > <hr class='m-auto border-light'></span>;
-
-                     <!-- START OF: php -->           
-                     <?php      }
-
-
-
-
-                        ?> <!-- /. nav categories -->
+                                    
+                                    <span class='vertical_Line desktop_Nav_Display my-auto'></span>
+                                    <span > <hr class='m-auto border-light mobile_Nav_Display'></span>;
+                                    <!-- /. DEV ACCESS - ADMIN AREA -->
+                                    <!-- /. DEV ACCESS - ADMIN AREA -->
+                                    <!-- /. DEV ACCESS - ADMIN AREA -->
+                                    
+                               
                             </ul> <!-- /. ul -->
 
                         </div> <!-- /.col -->
                         
-                        <div class="col-12 col-md-3 py-4 py-md-0 mx-auto m-md-0 ml-md-auto form-group">
+                        <div class="col-6 col-md-2 form-group my-md-0 pl-md-0 mx-auto">
 
-                            <form class="my-2 my-md-0 form-inline py-md-2" >
+                            <form class="my-2 text-center" >
 
                                 <input class="form-control my-2 mx-auto mx-md-1 my-md-0" type="search" name="nav_Search_Query" placeholder="Search" aria-label="Search">
-                                <button class="btn custom_Btn text-light my-2 mx-auto mx-md-1 my-md-0" type="submit">Search</button>
+                                <button class="btn custom_Btn text-light my-2 mx-auto mx-md-1 my-md-0 mobile_Nav_Display" type="submit">Search</button>
 
                             </form> <!-- END OF: search form -->
 

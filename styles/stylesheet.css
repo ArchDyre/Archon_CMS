@@ -13,6 +13,16 @@ body{
     
 }
 
+/* custom vertical line for nav-bar items */
+.vertical_Line{
+    
+    border-left: 2px solid;
+    border-color: #844eb1;
+    height: 30px;
+    
+}
+
+
 /* Media Queries */
 
 /* Above 768px Desktop Nav appear */

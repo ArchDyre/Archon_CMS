@@ -1,44 +1,15 @@
 <?php
+    
+    // Include `posts` class
+    include 'includes/functions';
+    $posts = new Posts();
 
     if(isset($_POST['create_Post_Submit'])){
         
         $error_Message = "";
         
-        if(!isset($_POST['add_Post_Title']) || empty($_POST['add_Post_Title'])){
-            
-            $error_Message .= "<p> Please provide a `Post Title` to continue </p>";
-            
-        }
+        // Call validation method
         
-        if(!isset($_POST['add_Post_Category']) || empty($_POST['add_Post_Category'])){
-            
-            $error_Message .= "<p> Please provide a `Post Title` to continue </p>";
-            
-        }
-        
-        if(!isset($_POST['add_Post_Status']) || empty($_POST['add_Post_Status'])){
-            
-            $error_Message .= "<p> Please provide a `Post Status` to continue </p>";
-            
-        }
-        
-        if(!isset($_POST['add_Post_Tags']) || empty($_POST['add_Post_Tags'])){
-            
-            $error_Message .= "<p> Please provide a `Post Tag(s)` to continue </p>";
-            
-        }
-        
-        if(!isset($_POST['add_Post_Author']) || empty($_POST['add_Post_Author'])){
-            
-            $error_Message .= "<p> Please provide a `Post Author` to continue </p>";
-            
-        }
-        
-        if(!isset($_POST['add_Post_Content']) || empty($_POST['add_Post_Content'])){
-            
-            $error_Message .= "<p> Please provide `Post Content` to continue </p>";
-            
-        }
         
         if($error_Message != ""){
             
@@ -68,6 +39,9 @@
             move_uploaded_file($post_Temp_Image_Location, "../images/posts/$post_Image");
             
             // Insert into DB
+            
+            // Create DB `query`
+            // PART - 1
             $query = "INSERT INTO `posts` (
             `post_title`,
             `post_category_id`,
@@ -78,7 +52,8 @@
             `post_image`,
             `post_content`)";
             
-            $query .= " VALUES ('".mysqli_real_escape_string($link,$post_Title)."','".mysqli_real_escape_string($link,$post_Category_Id)."','".mysqli_real_escape_string($link,$post_Status)."','".mysqli_real_escape_string($link,$post_Tags)."','".mysqli_real_escape_string($link,$post_Author)."','".mysqli_real_escape_string($link,$post_Date)."','".mysqli_real_escape_string($link,$post_Image)."','".mysqli_real_escape_string($link,$post_Contents)."')";
+            // PART - 2
+            $query .= " VALUES ('".mysqli_real_escape_string($link,$post_Title)."',".mysqli_real_escape_string($link,$post_Category_Id).",'".mysqli_real_escape_string($link,$post_Status)."','".mysqli_real_escape_string($link,$post_Tags)."','".mysqli_real_escape_string($link,$post_Author)."','".mysqli_real_escape_string($link,$post_Date)."','".mysqli_real_escape_string($link,$post_Image)."','".mysqli_real_escape_string($link,$post_Contents)."')";
             
             $results = mysqli_query($link,$query);
             

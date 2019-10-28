@@ -128,7 +128,7 @@
 
                     <div class="col-6">
 
-                        <!-- Mobile - Dashboard -->
+                        <!-- Mobile - Login -->
                         <li class="nav-item">
 
                             <p class="p-0 m-0"><img src="images/icons/shield-outline-light.png" class="" alt="" style="width: 15px;"></p>
@@ -136,7 +136,7 @@
 
                         </li> <!-- /. Mobile - Login -->
 
-                        <!-- Mobile - Dashboard -->
+                        <!-- Mobile - Register -->
                         <li class="nav-item" hidden>
 
                             <p class="p-0 m-0"><img src="images/icons/home-outline-light.png" class="" alt="" style="width: 15px;"></p>
@@ -144,7 +144,7 @@
 
                         </li> <!-- /. Mobile - Register -->
 
-                        <!-- Mobile - Dashboard -->
+                        <!-- Mobile - Log Out -->
                         <li class="nav-item" hidden>
 
                             <p class="p-0 m-0"><img src="images/icons/home-outline-light.png" class="" alt="" style="width: 15px;"></p>
@@ -193,11 +193,11 @@
                 <li class="nav-item dropdown">
 
                     <p class="p-0 m-0"><img src="images/icons/paper-rocket-outline-light.png" class="" alt="" style="width: 15px;"></p>
-                    <a class="nav-link dropdown-toggle text-light pt-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle text-light pt-0" href="posts.php?source=edit-post" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                         Posts
 
-                    </a> <!-- /. -->
+                    </a> <!-- /. Mobile - Posts -->
 
                     <div class="dropdown-menu text-center py-2" aria-labelledby="navbarDropdown">
 

@@ -67,14 +67,18 @@
 
                         }
 
-
-
+                        // Check if `$post_Image` is empty && Assigns broken image if it is
+                        if($post_Image == ""){
+                            
+                            $post_Image = "broken-image.png";
+                            
+                        }
 
                         ?>
 
                             <tr class='text-center'>
 
-                                <th scope="row" class="py-3"><input type="checkbox" name="checkbox.<?php echo $id; ?>"></th>
+                                <th scope="row" class="py-3"><input type="checkbox" name="checkbox.<?php echo $post_Id; ?>"></th>
                                 <td><?php echo $post_Id; ?></td>
                                 <td><?php echo $post_Author; ?></td>
                                 <td><?php echo $post_Title; ?></td>
@@ -85,12 +89,11 @@
                                 <td><?php echo $post_Total_Comments; ?></td>
                                 <td><?php echo $post_Create_Date; ?></td>
                                 <td><a class="btn" href="../post.php?reference=<?php echo $post_Id ?>">View</a></td>
-                                <td><a class="btn" href="posts.php?source=edit_post">Edit</a></td>
-                                <td><a class="btn" href="#">Delete</a></td>
+                                <td><a class="btn" href="posts.php?source=edit-post&secret=<?php echo $post_Id ?>&cat=<?php echo $row['post_category_id']; ?>">Edit</a></td>
+                                <td><a class="btn" href="posts.php?delete=<?php echo $post_Id ?>">Delete</a></td>
 
                             </tr> 
-
-
+							
                         <?php
 
                     }
