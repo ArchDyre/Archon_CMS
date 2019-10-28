@@ -34,10 +34,9 @@
                         $search_Query = $_POST['sidebar_Search'];
                         
                         // Prepare query to find related contents to the users' search query
-                        $query = "SELECT * FROM `posts` WHERE `post_tags` LIKE '%".mysqli_real_escape_string($link,$search_Query)."%' OR `post_title` LIKE '%".mysqli_real_escape_string($link,$search_Query)."%' OR `post_content` LIKE '%".mysqli_real_escape_string($link,$search_Query)."%'";
+                        $query = "SELECT * FROM `posts` WHERE `post_status` = 'published' AND (`post_tags` LIKE '%".mysqli_real_escape_string($link,$search_Query)."%' OR `post_title` LIKE '%".mysqli_real_escape_string($link,$search_Query)."%' OR `post_content` LIKE '%".mysqli_real_escape_string($link,$search_Query)."%')";
                         
-                        $search_Results = mysqli_query($link,$query);
-                        
+                                               
                         // run the mysqli query to find relatable results
                         $search_Results = mysqli_query($link,$query);
 
@@ -50,18 +49,24 @@
                         
                         // See if there were any query results found (number wise)
                          
-                        
+                        // Used to see if there are any posts to display.
                         $count = mysqli_num_rows($search_Results);
                         
-                       if($count == 0){
+                        if($count == 0){
                             
                             echo "No search results found...";
                             
-                        }else{
-                            
+                        }
+                        
+                       
                             // Creates posts 
-
-                                while($row = mysqli_fetch_assoc($search_Results)){
+                            while($row = mysqli_fetch_assoc($search_Results)){
+                                
+                                if($row['post_status'] == 'draft'){
+                                    
+                                    // Do Nothing
+                                    
+                                }else{
                                     
                                     $post_Title = $row['post_title'];
                                     $post_Author = $row['post_author'];
@@ -72,7 +77,7 @@
                                     
                                     // End php script to include html::after
                                     ?>
-                                    
+                                
                                     <!-- Blog Post -->
                                     <div class="card mb-4">  
 
@@ -98,13 +103,14 @@
 
                                     </div> <!-- /. -->
                                     
+                                    <!-- Open php to `enclose` the `while` loops closing tag -->
+                 			<?php  
+                 			
+                                }
+                            }
 
-                        <!-- Open php to `enclose` the `while` loops closing tag -->
-                         <?php  } 
-                            
-                        }
-                    
-                        
+                         
+                          
                     }?> <!-- Close php `while` loop -->
        
 
