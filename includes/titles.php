@@ -6,7 +6,7 @@ class Titles{
     static $page_Title = "";
     
     /* Used to generate titles based on `GET[]`  */
-    static function GenerateTitles(){
+    static function generateTitles(){
         
         global $link;
         

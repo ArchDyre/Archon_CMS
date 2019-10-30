@@ -13,11 +13,12 @@ Class UserPosts{
     public $post_Image = "";
 
     
-    function generate_Posts(){
+    function generatePosts(){
         
         global $link;
         $no_Posts = 0;
         
+        // Used to check if it should only generate Category spesific content
         if(isset($_GET['cat-zone'])){
             
             $query = "SELECT * FROM `posts` WHERE `post_category_id` = ".mysqli_real_escape_string($link, $_GET['cat-zone'])." AND `post_status` = 'published'";
@@ -44,12 +45,16 @@ Class UserPosts{
             $this -> post_Author = $row['post_author'];
             $this -> post_Date = $row['post_date'];
             
-            // keeps white spaces intact
-            $this -> post_Content = preg_replace('#(\\\r\\\n|\\\n)#', "\n", $row['post_content']);
+            /* 
+             * `preg_replace` keeps white spaces intact
+             * 
+             * `substr(content,0,250)` is used to shorten `$this -> post_Content` to a maximum of 250 characters 
+             */
+            $this -> post_Content = substr(preg_replace('#(\\\r\\\n|\\\n)#', "\n", $row['post_content']),0,150);
             $this -> post_Tags = $row['post_tags'];
             $this -> post_Image = $row['post_image'];
             
-            //ensure image isn't empty && display broken image if it is empty
+            // Ensures that the `$this -> post_Image` isn't empty && displays a broken image if it is empty
             if($this -> post_Image == ""){
                 
                 $this -> post_Image = "broken-image.png";
@@ -57,7 +62,12 @@ Class UserPosts{
             }
             
             
-            /* Blog Post */
+            /* 
+             * Blog Post 
+             * 
+             * Echo's the `html` layout
+             * 
+             * */
             echo "<div class='card mb-4'>";
             
             echo "<img class='card-img-top' src='images/posts/{$this -> post_Image}' alt='Post Related Image' style='max-width: 750px; max-height: 300px;'>";
@@ -81,12 +91,24 @@ Class UserPosts{
             echo "</div>"; /* /. div - card-footer */
             
             echo "</div>"; /* /. div - card */
-                
+            
+            
+            /* 
+             * 
+             * Used to keep track of the amount of posts as a safeguard method 
+             * Allows a message to be displayed if it == 0
+             * 
+            */
+            
             $no_Posts ++;
 
         }
         
-        // Checks if $row is empty.
+        /* 
+         * Checks if $row is empty.
+         * display message that no posts were found IF == `empty`
+         * 
+         */
         if($row == "" && $no_Posts == 0){
             
             echo("<div class='alert alert-danger text-center'>No results found</div>");
@@ -107,7 +129,7 @@ class UserCategories{
     
     
     /* START: generate_Categories  */
-    function generate_Cat(){
+    function generateCat(){
         
         global $link;
         
@@ -231,7 +253,7 @@ class UserCategories{
     /* /. generate_Cat */
     
     // Used to generate the navigation-bar `categories`
-    function nav_Categories(){
+    function navCategories(){
         
         global $link;
         

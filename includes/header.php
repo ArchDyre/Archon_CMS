@@ -12,6 +12,9 @@ include_once 'includes/functions.php';
 // Titles Include
 include_once 'includes/titles.php';
 
+// Includes the tools page && class
+include_once 'includes/tools.php';
+
 
 // Security Headers
 // External iframes not allowed??

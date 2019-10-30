@@ -5,7 +5,7 @@
     <?php include "includes/nav.php"; ?>
     
     <!--  Instantiate class -->
-    <?php $user_Posts = new UserPosts(); ?>
+    <?php $userPosts = new UserPosts(); ?>
     
    <!-- START OF: .container -->
     <div class="container"> 
@@ -29,7 +29,7 @@
                     </h1> <!-- /. -->
 
                            <!-- include Method to `generate posts` -->
-                           <?php $user_Posts -> generate_Posts(); ?>
+                           <?php $userPosts -> generatePosts(); ?>
                             
                      
 

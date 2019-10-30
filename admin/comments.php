@@ -26,23 +26,6 @@
                 
                 
                 <div class="container-fluid mb-5 pt-3">
-                
-                    <?php 
-                    
-                    
-                    /*
-                     * 
-                     * `source` == $_GET['source']
-                     * 
-                     * 
-                     * `edit-post`
-                     * `add-post`
-                     * 
-                     * used to determine page contens to be displayed
-                     * 
-                     */
-
-                    ?>
                     
                     
                     
@@ -75,19 +58,19 @@
                         
                             // Displays the default table to `view all posts`
                         default:
-                            $type = 'posts';
+                            $type = 'comments';
                             $views = new Views();
                             $views -> adminTableGenerate($type);
                             break;
 
                     }
                         
-                    // Instantiate `class Posts`
-                    $posts = new Posts();
                     
-                    // Runs the delete command
-                    $posts -> postDelete();
-                            
+                        // Instantiate `Comments` class
+                        $comments = new Comments();
+                        // Call `delete` method from `Comments` - class
+                        $comments->commentDelete();
+    
 
                     ?> <!-- /. php -->
                     

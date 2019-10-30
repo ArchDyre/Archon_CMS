@@ -4,7 +4,7 @@
     $posts = new Posts();
 
     // Method to check $_POST
-    $posts -> check_POST();
+    $posts -> checkPOST();
     
     if($_GET['source'] == "edit-post" && isset($_GET['secret'])){
             
@@ -12,7 +12,7 @@
         $edit_Post_Id = $_GET['secret'];
         
         // Call method to change variables
-        $posts -> set_Edit_Variables($edit_Post_Id);
+        $posts -> setEditVariables($edit_Post_Id);
         
     }elseif($_GET['source'] == "add-post"){
         
@@ -175,7 +175,7 @@
           	<div class="form-group">
 				
 				<label for="up_Post_Date">Post Date</label>
-				<input type="text""up_Post_Date" class="form-control" disabled name="post_Date" value="<?php echo date_format(new DateTime($posts -> post_Date), 'd-m-Y');?>">
+				<input type="text" id="up_Post_Date" class="form-control" disabled name="post_Date" value="<?php echo date_format(new DateTime($posts -> post_Date), 'd-m-Y');?>">
 				
 				<!-- Hide until implemented. == Editable Date Function -->
 				<?php  

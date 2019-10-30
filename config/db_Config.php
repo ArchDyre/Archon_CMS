@@ -2,14 +2,21 @@
 
 
 class Database{
+    
+       
+    public $link;
 
     // DB connection Method
-    function db (){
+    function connection (){
 
-        // DB Connection
+        // DB Connection array
         private $db = ["db_Host"=>"localhost", "db_Username" => "root", "db_Password" => "", "db_Name" => "archon"];
 
-        // runs through each value in the $db['']
+        /*
+         * Runs through each value in the $db['']
+         * Generates associative values for each item in the `$db` array
+         * 
+         */ 
         foreach ($db as $key => $value){
 
             // Transforms all `keys` into constants (Constants have to be uppercase)
@@ -17,8 +24,8 @@ class Database{
 
         }
 
-        // Establish bd link connection with `constants`
-        public $link = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
+        // Establish db link connection with `constants`
+        $this->$link = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
 
         // Error handling
         if($link === false){
@@ -27,7 +34,6 @@ class Database{
             die("DB connection error: ".mysqli_error());
 
         }
-
 
     }
 }
