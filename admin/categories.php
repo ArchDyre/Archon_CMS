@@ -44,7 +44,7 @@
                                             <?php
 
                                                 // ADD - categories function()
-                                                cat_Add();
+                                                catAdd();
 
                                             ?> <!-- /PHP -->
 
@@ -121,7 +121,7 @@
                                         <!-- Fetch Categories and create table-rows -->
                                         <?php
                                             
-                                            cat_View_All();
+                                            catViewAll();
                                         
                                         ?> <!-- closing while loop -->
                                         
@@ -130,7 +130,7 @@
                                         <?php
                                             
                                             // Insert delete function
-                                            cat_Delete();
+                                            catDelete();
                                         
                                         ?>
                                         

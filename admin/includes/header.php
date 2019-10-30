@@ -23,10 +23,13 @@ header("Strict-Transport-Security: max-age=31536000");
 
 
 // Database Connection
-include "../includes/db.php";
+include_once "../includes/db.php";
 
 // Category Page Functions => include
-include "includes/functions.php";
+include_once "includes/functions.php";
+
+// Includes the tools page && class
+include_once '../includes/tools.php';
 
 ?>
 

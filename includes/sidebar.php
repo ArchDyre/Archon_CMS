@@ -40,9 +40,9 @@
                 <!-- Include Generating Sidebar Display `categories` -->
                 <?php 
                 
-                $user_Categories = new UserCategories();
+                $user_Categories = new userCategories();
                 
-                $user_Categories -> generate_Cat();
+                $user_Categories -> generateCat();
                 
                 ?>
                 

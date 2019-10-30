@@ -51,7 +51,7 @@
         <div id="dropdown_Header_03">
           <h2 class="mb-0 ">                                 
             <button class="btn text-light p-0" id="comments_Btn" type="button">
-              <a class="nav-link active text-light py-auto" href="#"><img src="images/icons/chat-alt-double-outline-light.png" class="mx-2" alt="" style="width: 15px;">Comments</a>
+              <a class="nav-link active text-light py-auto" href="comments.php"><img src="images/icons/chat-alt-double-outline-light.png" class="mx-2" alt="" style="width: 15px;">Comments</a>
             </button> <!-- /. -->
           </h2> <!-- /. -->
         </div> <!-- /. -->    
