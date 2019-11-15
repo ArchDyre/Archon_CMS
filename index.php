@@ -7,11 +7,9 @@
     <!--  Instantiate class -->
     <?php $userPosts = new UserPosts(); ?>
     
-   <!-- START OF: .container -->
-    <div class="container"> 
-        
+
         <!-- Page Content -->
-        <div class="container">
+        <div class="container pt-3">
 
             <div class="row">
                 
@@ -20,7 +18,7 @@
                
                 
                 <!-- Blog Entries Column -->
-                <div class="col-md-8">
+                <div class="col-12 col-lg">
 
                     <h1 class="my-4">
                      
@@ -53,9 +51,7 @@
 
         </div>
         <!-- /.container -->
-        
-        
-    </div> <!-- END OF: .container -->
+
     
     <!-- footer => include -->
     <?php include "includes/footer.php"; ?>

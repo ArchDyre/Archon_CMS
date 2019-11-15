@@ -176,7 +176,8 @@
                                     
                                     
                                     <!-- Include method nav_Categories() TO `display` navigation bar categories -->
-                            		<?php $user_Categories = new UserCategories(); $user_Categories -> navCategories(); ?>
+                            		<?php $user_Categories = new UserCategories(); 
+                                          $user_Categories -> navCategories(); ?>
                                     
                                     
                                     

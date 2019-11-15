@@ -15,7 +15,6 @@ include_once 'includes/titles.php';
 // Includes the tools page && class
 include_once 'includes/tools.php';
 
-
 // Security Headers
 // External iframes not allowed??
 header("X-Frame-Options: sameorigin"); 
@@ -34,6 +33,7 @@ header("X-Content-Type-Options: nosniff");
 
 // Strict transport security
 header("Strict-Transport-Security: max-age=31536000");
+
 
 ?>
 
