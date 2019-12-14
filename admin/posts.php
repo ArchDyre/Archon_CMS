@@ -38,7 +38,7 @@
                      * `edit-post`
                      * `add-post`
                      * 
-                     * used to determine page contens to be displayed
+                     * used to determine page contents to be displayed
                      * 
                      */
 
@@ -71,9 +71,8 @@
                         case 'edit-post':
                             include "includes/up-post.php";
                             break;
-
                         
-                            // Displays the default table to `view all posts`
+                        // Displays the default table to `view all posts`
                         default:
                             $type = 'posts';
                             $views = new Views();

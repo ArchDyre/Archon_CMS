@@ -68,9 +68,10 @@ Class UserPosts{
              * Echo's the `html` layout
              * 
              * */
-            echo "<div class='card mb-4'>";
+            echo "<div class='card mb-3 mb-lg-5'>";
             
-            echo "<img class='card-img-top' src='images/posts/{$this -> post_Image}' alt='Post Related Image' style='max-width: 750px; max-height: 300px;'>";
+            echo "<img class='card-img-top mx-auto' src='images/posts/{$this -> post_Image}' alt='Post Related Image' style='max-width: 750px; max-height: 300px;'>";
+            
             echo "<div class='card-body'>";
             
             echo "<h2 class='card-title'><a href='post.php?reference={$this -> post_Id}'>{$this -> post_Title}</a></h2>";
@@ -83,7 +84,7 @@ Class UserPosts{
             
             echo "</div>"; /* /. div - card-body */
             
-            echo "<div class='card-footer text-muted'>";
+            echo "<div class='card-footer text-muted w-100'>";
             
             echo "Posted on ".date_format(new DateTime($this -> post_Date), 'd-m-Y');
             echo " by <a href='#'>{$this -> post_Author}</a>";
@@ -261,6 +262,9 @@ class UserCategories{
         $query = " SELECT * FROM `categories`";
         
         $results = mysqli_query($link, $query);
+        
+        // Kills `MySql` connection and creates error report if the query didn't run
+        echo Tools::queryCheck($results,$query);
         
         
         while ($row = mysqli_fetch_assoc($results)) {

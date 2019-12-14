@@ -21,6 +21,9 @@ if($link === false){
         
 }
 
+
+
+
 // Declares and initialises connection variables for DB (NOT IN USE AT THE MOMENT)
 class Dbconfig{
     

@@ -4,16 +4,16 @@
 // Includes
 
 //Database Include
-include_once 'includes/db.php';
+require_once 'includes/db.php';
 
 // Functions Include
-include_once 'includes/functions.php';
+require_once 'includes/functions.php';
 
 // Titles Include
-include_once 'includes/titles.php';
+require_once 'includes/titles.php';
 
 // Includes the tools page && class
-include_once 'includes/tools.php';
+require_once 'includes/tools.php';
 
 // Security Headers
 // External iframes not allowed??
@@ -48,7 +48,7 @@ header("Strict-Transport-Security: max-age=31536000");
         <link rel="stylesheet" type="text/css" href="styles/normalise.css">
         
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         
         <!-- Link to css sheet -->
         <link rel="stylesheet" type="text/css" href="styles/stylesheet.css">

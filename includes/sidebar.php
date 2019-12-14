@@ -1,5 +1,5 @@
 <!-- Sidebar Widgets Column -->
-<div class="col-0 col-md-12 col-lg-3">
+<div class="col-0 col-md-12 col-lg-4">
 
    
    

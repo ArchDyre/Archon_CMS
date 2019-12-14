@@ -1,4 +1,4 @@
-<nav class="nav p-3 desktop_Nav_Display text-left">   
+<nav class="nav p-2 desktop_Nav_Display text-left">   
                    
                     
         <!-- Dashboard -->
@@ -30,7 +30,7 @@
                       <div class="bg-light">
                         <button class="dropdown-item border-bottom py-2 text-wrap text-center" type="button"><a class="nav-link active p-0 text-dark" href="posts.php"><img src="" alt="">View all</a></button>
                         <button class="dropdown-item border-bottom py-2 text-wrap text-center" type="button"><a class="nav-link p-0 text-dark" href="posts.php?source=add-post"><img src="" alt="">New post</a></button>
-                        <button class="dropdown-item border-bottom py-2 text-wrap text-center" type="button"><a class="nav-link p-0 text-dark" href="posts.php?source=edit-post"><img src="" alt="">Edit post (Remove)</a></button>
+                        <!-- <button class="dropdown-item border-bottom py-2 text-wrap text-center" type="button"><a class="nav-link p-0 text-dark" href="posts.php?source=edit-post"><img src="" alt="">Edit post (Remove)</a></button> -->
                       </div> <!-- /. -->
                     </div> <!-- /. -->
 
@@ -45,7 +45,7 @@
             <div id="dropdown_Header_02" class="col-12">
               <h2 class="mb-0 ">                                 
                 <button class="btn text-light p-0" id="cat_Btn" type="button">
-                  <a class="nav-link active text-light py-auto" href="categories.php"><img src="images/icons/many-people-outline-light.png" class="mx-2" alt="" style="width: 15px;">Categories</a>
+                  <a class="nav-link active text-light py-auto w-100" href="categories.php"><img src="images/icons/many-people-outline-light.png" class="mx-2" alt="" style="width: 15px;">Categories</a>
                 </button> <!-- /. -->
               </h2> <!-- /. -->
             </div> <!-- /. -->
@@ -55,7 +55,7 @@
 
 
         <!-- Comments -->
-        <div class="row">   
+        <div class="row w-100">   
             <div id="dropdown_Header_03" class="col-12">
               <h2 class="mb-0 ">                                 
                 <button class="btn text-light p-0" id="comments_Btn" type="button">
