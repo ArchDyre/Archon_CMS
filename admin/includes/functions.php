@@ -192,8 +192,9 @@ class Posts{
         
         global $link;
               
+        // Image uploader => NOT WORKING -> (Building a class to handle image uplaoding)
         // Moves the `uploaded user image` to the `image` folder after $_POST[] submit
-        move_uploaded_file($new_Variables['post_Temp_Image_Location'], "../images/posts/{$new_Variables['post_Image']}");
+        // move_uploaded_file($new_Variables['post_Temp_Image_Location'], "../images/posts/{$new_Variables['up_post_Image']}");
         
         // Inserts <br> tags after `new lines`
         // Used to display correct for `post- users/readers`
@@ -345,10 +346,12 @@ class Posts{
                 'post_Category_Id' => intval($_POST['post_Category']),
                 'post_Status' => $_POST['post_Status'],
                 
+                // Replace Image section with new function
+                
                 // Image stored on database
-                'post_Image' => $_FILES['post_Image']['name'],
+                // 'post_Image' => $_FILES['post_Image']['name'],
                 // Stores uploaded images in a temporary place
-                'post_Temp_Image_Location' => $_FILES['post_Image']['tmp_name'],
+                // 'post_Temp_Image_Location' => $_FILES['images/']['tmp_name'],
                 
                 'post_Tags' => $_POST['post_Tags'],
                 'post_Author' => $_POST['post_Author'],
@@ -368,7 +371,7 @@ class Posts{
                 
             }else{
                 
-                // insert duction to handle values => bd update
+                // insert fuction to handle values => bd update
                 $this -> updateDB($new_Variables);
                 
             }
@@ -697,5 +700,174 @@ class Views{
 }
 
 
+
+// Class used for handling images
+class HandleImages{
+    /*
+    $uploadedImage = "";
+    $targetDir = "";
+    $targetFile = "";
+    $uploadOk = 1;
+    $check = "";
+    $imageFileType = "";
+    */
+    
+    /*  
+        -- retrieveImage($postImage) --
+    
+        Functions used to find, verify and store uplaoded images
+    
+    */
+    static public function retrieveImage($postImage){
+        
+        // Assign uploaded image value to local variable
+        $this -> uploadedImage = $postImage;
+        
+        // Checks if the image is set, and continues to validate and store the image
+        if(isset($this -> uploadedImage)){
+            
+            // specifies the directory where the file is going to be placed
+            $this -> targetDir = "../images/posts";
+
+            // specifies the path of the file to be uploaded
+            $this -> targetFile = $this -> targetDir . basename($_FILES[$this -> uploadedImage]["name"]);
+            
+            // Validates the file size of the image
+            $this -> checkFileSize();
+            
+            // Validates if the image already exists on the server
+            $this -> fileExists();
+            
+            // Validates that the image is of an acceptable image format
+            $this -> fileFormats();
+            
+            // Validates if there were any errors
+            // If no errors were present, it provides the image back to the `Requester` for Database upload
+            $this -> finalCheckAdvance();
+            
+        }
+        
+    }
+    /* ./  retrieveImage($postImage) */
+    
+    
+    
+    /*
+        Handles all error handling of `this` image class
+    */
+    private function errorHandler(){
+        
+        // Check file size
+        if ($_FILES[$this -> uploadedImage]["size"] > 500000) {
+            // File is to large
+            // Insert Error event handling
+
+
+            $uploadOk = 0;
+        }else{
+            
+            // Assigns image size to a variable
+            $check = getimagesize($_FILES[$this -> uploadedImage]["tmp_name"]);
+            
+        } 
+        
+    }
+    /* ./ errorHandler() */
+    
+    
+    /*
+        Used to check and validate the size of an uploaded image
+    */
+    private function checkFileSize(){
+        
+        // Check file size
+        if ($_FILES[$this -> uploadedImage]["size"] > 500000) {
+            // File is to large
+            // Insert Error event handling
+
+
+            $uploadOk = 0;
+        }else{
+            
+            // Assigns image size to a variable
+            $check = getimagesize($_FILES[$this -> uploadedImage]["tmp_name"]);
+            
+        } 
+        
+    }
+    /* ./ checkFileSize() */
+    
+    
+    /*
+        Used to validate if the uplaoded image already exists on the server
+    */
+    private function fileExists(){
+        
+        // Check if file already exists
+        if (file_exists($this -> targetFile)) {
+            // Image already exists on the server
+            // Insert Error Event handling 
+
+
+            $this -> uploadOk = 0;
+        }
+        
+    }
+    /* ./ fileExists() */
+    
+    
+    /*
+        Used to validate if the uplaoded image is of a valid image format
+    */
+    private function fileFormats(){
+        
+        // Used to determine the images' filetype
+        // holds the file extension of the file (in lower case)
+        $this -> imageFileType = strtolower(pathinfo($this -> targetFile,PATHINFO_EXTENSION));
+
+
+        // Allow certain file formats
+        if($this -> imageFileType != "jpg" && $this -> imageFileType != "png" && $this -> imageFileType != "jpeg"
+        && $this -> imageFileType != "gif" ) {
+            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+            $this -> uploadOk = 0;
+        }
+        
+    }
+    /* ./ fileFormats() */
+    
+    
+    /*
+        Validates if there were any errors, and initiates error event handling
+        IF there were no errors, it continues to assign the image for DB usuage/upload
+    */
+    private function finalCheckAdvance(){
+        
+        // Check if $uploadOk is set to 0 by an error
+        if ($this -> uploadOk == 0) {
+            
+            // Error handling if there were errors
+            
+            
+        // if everything is ok, try to upload file
+        } else {
+            
+            if (move_uploaded_file($_FILES[$this -> uploadedImage]["tmp_name"], $this -> target_file)) {
+                
+                // Image successfully uplaoded
+                
+            } else {
+                
+                // Error occured while uploading
+                
+            }
+            
+        }
+        
+    }
+    /* ./ finalCheckAdvance() */
+    
+}
+/* ./ HandleImages class */
 
 ?>

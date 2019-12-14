@@ -20,6 +20,16 @@
                 <div class="col-md-8">
 
                     <h1 class="my-4">
+                    
+                    <?php
+                    
+                    if(!isset($_POST['sidebar_Search'])){
+                        
+                        header ("Location: index.php");
+                        
+                    }
+                        
+                    ?>
                      
                      Search results for: <span class="font-weight-bold"> <?php echo $_POST['sidebar_Search']; ?></span>
                      
@@ -68,6 +78,7 @@
                                     
                                 }else{
                                     
+                                    $post_Id = $row['post_id'];
                                     $post_Title = $row['post_title'];
                                     $post_Author = $row['post_author'];
                                     $post_Date = $row['post_date'];
@@ -90,7 +101,7 @@
                                                 <?php echo $post_Content; ?>
                                             </p>
                                             
-                                            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+                                            <a href="post.php?reference=<?php echo $post_Id; ?>" class="btn btn-primary">Read More &rarr;</a>
                                             
                                         </div> <!-- /. -->
 

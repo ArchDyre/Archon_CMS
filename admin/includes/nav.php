@@ -19,7 +19,7 @@
 
                     <div class="navbar-nav justify-content-start" id="Center_Nav">
 
-                        <a class="navbar-brand text-light mx-2" id="brand_Logo" href="#">
+                        <a class="navbar-brand text-light mx-2" id="brand_Logo" href="../index.php">
 
                             <img class="text-light" src="../images/logo/Capture_Modified_Transparent_New.png" height="50" alt="Archon CMS logo">
 

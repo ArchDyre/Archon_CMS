@@ -15,6 +15,7 @@ class Tools{
         
     }
     /* /. method -> queryCheck() */
+
     
 }
 /* /. class Tools */

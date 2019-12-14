@@ -190,7 +190,7 @@
             	<!-- Display image input -->
             	<div class='my-md-4'>
                 	<label for="up_Post_Image">Choose Image</label>
-                	<input type="file" id="up_Post_Image" name="post_Image" class="form-control-file">
+                	<input type="file" id="up_Post_Image" name="up_post_Image" class="form-control-file">
                 </div>
             	
             	<?php 
@@ -232,7 +232,7 @@
             <div class="form-group">
 
                 <label for="up_Post_Content">Post Content</label>
-                <textarea class="form-control" id="up_Post_Content" name="post_Content" cols="30" rows="10"><?php echo $posts -> post_Contents;?></textarea>
+                <textarea class="form-control" id="up_Post_Content" name="post_Content" cols="30" rows="10"><?php echo preg_replace('/[\/\n+\r+]/', "", $posts -> post_Contents);?></textarea>
 
             </div> <!-- /. -->
             

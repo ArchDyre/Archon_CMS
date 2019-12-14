@@ -1,35 +1,50 @@
     <!-- header => include -->
-    <?php include "includes/header.php"; ?>
+    <?php require_once "includes/header.php"; ?>
     
     <!-- nav-bar => include -->
-    <?php include "includes/nav.php"; ?>
+    <?php require_once "includes/nav.php"; ?>
     
-    <!--  Instantiate class -->
-    <?php $userPosts = new UserPosts(); ?>
+    <?php 
     
-   <!-- START OF: .container -->
-    <div class="container"> 
-        
+    // Instantiate class
+    // functions.php -> userPosts{}
+
+    $userPosts = new UserPosts(); 
+
+    ?>
+    
+
         <!-- Page Content -->
-        <div class="container">
+        <div class="container pt-3">
 
             <div class="row">
                 
                 <!-- sidebar => include -->
-                <?php include "includes/sidebar.php"; ?>
+                <?php require_once "includes/sidebar.php"; ?>
                
                 
                 <!-- Blog Entries Column -->
-                <div class="col-md-8">
+                <div class="col-12 col-lg">
 
                     <h1 class="my-4">
                      
-                     <?php Titles::GenerateTitles(); ?>
+                    <?php 
+                        
+                    // titles.php -> Titles{} -> GenerateTitles()
+                    Titles::generateTitles(); 
+                    
+                    ?>
                       
                     </h1> <!-- /. -->
+                           
+                   <?php 
 
-                           <!-- include Method to `generate posts` -->
-                           <?php $userPosts -> generatePosts(); ?>
+                    // include Method to `generate posts`
+                    // functions.php -> userPosts{} -> generatePosts()
+
+                    $userPosts -> generatePosts(); 
+                    
+                    ?>
                             
                      
 
@@ -53,9 +68,7 @@
 
         </div>
         <!-- /.container -->
-        
-        
-    </div> <!-- END OF: .container -->
+
     
     <!-- footer => include -->
-    <?php include "includes/footer.php"; ?>
+    <?php require_once "includes/footer.php"; ?>

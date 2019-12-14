@@ -169,14 +169,30 @@
                                     </a> <!-- /. a -->
                                     
                                     <span class='vertical_Line desktop_Nav_Display my-auto'></span>
-                                    <span > <hr class='m-auto border-light mobile_Nav_Display'></span>;
+                                    <span > <hr class='m-auto border-light mobile_Nav_Display'></span>
                                     <!-- /. DEV ACCESS - ADMIN AREA -->
                                     <!-- /. DEV ACCESS - ADMIN AREA -->
                                     <!-- /. DEV ACCESS - ADMIN AREA -->
                                     
                                     
-                                    <!-- Include method nav_Categories() TO `display` navigation bar categories -->
-                            		<?php $user_Categories = new UserCategories(); $user_Categories -> navCategories(); ?>
+                                    
+                            		<?php 
+                                    
+                                    /* 
+                                        Include method nav_Categories() TO `display` navigation bar categories
+                                        functions.php -> userCategories{}
+                                    */
+                                    
+                                    $user_Categories = new UserCategories(); 
+                                    
+                                    /*  
+                                        Calling navCategories() to display
+                                        category titles as `Titles` on the `Navbar`
+                                    */
+                                    $user_Categories -> navCategories(); 
+
+
+                                    ?>
                                     
                                     
                                     
@@ -190,7 +206,7 @@
                                     </a> <!-- /. a -->
                                     
                                     <span class='vertical_Line desktop_Nav_Display my-auto'></span>
-                                    <span > <hr class='m-auto border-light mobile_Nav_Display'></span>;
+                                    <span > <hr class='m-auto border-light mobile_Nav_Display'></span>
                                     <!-- /. DEV ACCESS - ADMIN AREA -->
                                     <!-- /. DEV ACCESS - ADMIN AREA -->
                                     <!-- /. DEV ACCESS - ADMIN AREA -->

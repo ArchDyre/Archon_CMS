@@ -45,9 +45,16 @@
                         $post_Author = $row['post_author'];
                         $post_Cat_Id = $row['post_category_id'];
                         $post_Date = $row['post_date'];
-                        $post_Content = $row['post_content'];
+                        $post_Content = preg_replace('/[\/\n\r<br>]/', "", $row['post_content']);
                         $post_Tags = $row['post_tags'];
                         $post_Image = $row['post_image'];
+                        
+                        // Sets a default post image
+                        if(empty($post_Image)){
+                            
+                            $post_Image = "broken-image.png";
+                            
+                        }
 
                         // create query to retrieve `cat_title` with `cat_id` FROM `categories`
                         $query = "SELECT `cat_title` FROM `categories` WHERE `cat_id` = '".mysqli_real_escape_string($link,$post_Cat_Id)."'";
